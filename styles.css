@@ -1,0 +1,502 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #fff;
+}
+
+.logo img {
+    min-width: 240px;
+    max-width: 40%;
+    margin: 10px;
+    margin-left: 40px;
+}
+
+.navbar {
+    background-color: #025394;
+    height: 50px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar li {
+    flex: 1;
+    text-align: center;
+    line-height: 50px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-family: '宋体';
+    font-size: 16px;
+    display: block;
+}
+
+.slider {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.left-button,
+.right-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.left-button {
+    left: 10px;
+}
+
+.right-button {
+    right: 10px;
+}
+
+/* Home content CSS */
+.main-content {
+    display: flex;
+    background-color: #fff;
+}
+
+.left-column {
+    width: 60%;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.right-column {
+    width: 40%;
+    height: 100%;
+    margin-right: 50px;
+}
+
+.title {
+    display: flex;
+    background-color: #025394;
+    border: 1px solid #025394;
+    height: 50px;
+    color: #fff;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: '宋体';
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title td {
+    width: 1000px;
+    padding: 10px;
+}
+
+.title a {
+    color: #fff;
+    text-decoration: none;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 50px;
+}
+
+.content {
+    border: 1px solid #025394;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    font-family: '宋体';
+    min-height: 250px;
+    margin-bottom: 20px;
+}
+
+.content table {
+    width: 100%;
+}
+
+.content td {
+    width: 90%;
+    line-height: normal;
+    height: 1.2em;
+    max-width: 20ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 2px dashed #ccc;
+}
+
+.left-column .content img {
+    width: 40%;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.content a {
+    text-decoration: none;
+    color: #000;
+}
+
+.content a:hover {
+    text-decoration: underline;
+    color: #025394;
+}
+
+@media only screen and (max-width: 900px) {
+    .slider {
+        height: 220px;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-column {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .right-column {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .content td {
+        max-width: 10ch;
+    }
+
+    .left-column .content img {
+        width: 40%;
+        max-height: 100px;
+        padding: 5px;
+        margin-right: 5px;
+    }
+}
+
+/* footer CSS */
+.footer {
+    background-color: #025394;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-left {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+.footer-right {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-right h3 {
+    text-align: left;
+}
+
+.footer-right.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-right a {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+@media (min-width: 900px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-left {
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .footer-right {
+        width: 40%;
+        text-align: left;
+    }
+
+    .footer-right h3 {
+        text-align: left;
+    }
+
+    .footer-right a {
+        margin-top: 25px;
+        margin-right: 25px;
+    }
+}
+
+
+.button-container {
+    display: flex;
+}
+
+.circle-button {
+    width: 40px;
+    height: 40px;
+    left: 120px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: #003c6d;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.circle-button:hover::after {
+    content: "";
+    position: absolute;
+    top: -105px;
+    left: -30px;
+    right: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 0.2s ease-in;
+}
+
+a[id='QQ'].circle-button:hover::after {
+    background-image: url(Image/YuZhuohang_QQ.png);
+}
+
+a[id='WeChat'].circle-button:hover::after {
+    background-image: url(Image/YuZhuohang_WeChat.png);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fa-qq {
+    color: white;
+    font-size: 30px;
+}
+
+.fa-weixin {
+    color: white;
+    font-size: 30px;
+}
+
+/* Notification */
+.Info_box {
+    background-color: #ddd;
+    padding: 50px;
+    min-height: 400px;
+}
+
+.Info {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 40px;
+    width: 80%;
+    min-height: 300px;
+}
+
+.Info a {
+    text-decoration: none;
+    margin-right: 3px;
+    color: #000;
+    font-size: large;
+}
+
+.Info a:hover {
+    color: #025394;
+}
+
+.Info_title {
+    margin-top: 60px;
+}
+
+.Info_title h1 {
+    font-size: 34px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.Info_title p {
+    color: #666;
+    text-align: center;
+}
+
+.Info_text {
+    margin-top: 40px;
+}
+
+.Info_text p {
+    text-indent: 2em;
+    font-size: 22px;
+    font-family: "Times New Roman", SimSun;
+}
+
+.Info button {
+    width: 20%;
+    margin: auto;
+}
+
+/* class */
+.classbox {
+    background-color: #ddd;
+    padding: 50px;
+}
+
+.class_information {
+    width: 80%;
+    background-color: #fff;
+    margin: auto;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.class_information table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.class_information th,
+.class_information td {
+    border: 1px solid #aaa;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.class_information th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.class_information .highlight {
+    background-color: yellow;
+}
+
+.class_information .search-container {
+    width: 20%;
+    min-width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.class_information input[type="text"] {
+    padding: 5px;
+    border: none;
+    flex: 1;
+    border-radius: 3px;
+    transition: box-shadow 0.3s;
+}
+
+.class_information input[type="text"]:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.class_information button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.class_information button:hover {
+    background-color: #0056b3;
+}
+
+@media only screen and (max-width: 900px) {
+    .Info_title h1 {
+        font-size: 24px;
+    }
+
+    .Info_title p {
+        font-size: 12px;
+    }
+
+    .Info_text p {
+        font-size: 16px;
+    }
+
+    .Info_text button {
+        width: 50%;
+    }
+
+    .Info_box{
+        padding: 40px;
+    }
+
+    .class_information {
+        width: 90%;
+    }
+
+    .class_information th,
+    .class_information td {
+        padding: 2px;
+        font-size: 10px;
+    }
+
+    .classbox {
+        padding: 30px;
+    }
+
+    .class_information input,
+    .class_information button {
+        font-size: 10px;
+    }
+}
