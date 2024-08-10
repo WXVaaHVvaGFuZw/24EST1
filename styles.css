@@ -422,7 +422,7 @@ a[id='WeChat'].circle-button:hover::after {
 
 .class_information .search-container {
     width: 20%;
-    min-width: 220px;
+    min-width: 230px;
     display: flex;
     justify-content: space-between;
     align-items: center;
