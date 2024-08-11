@@ -36,5 +36,7 @@ def copy_and_modify_html():
     shutil.copy2(template_path, notification_destination_path)
     modify_html_links(notification_destination_path)
 
+    print("loaded Successfully")
+
 if __name__ == "__main__":
     copy_and_modify_html()
