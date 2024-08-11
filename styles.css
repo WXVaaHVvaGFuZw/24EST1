@@ -217,8 +217,24 @@ body {
 
 .footer-left {
     width: 100%;
+    min-width: 750px;
     margin-left: 0;
     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .footer-left {
+        min-width: 300px;
+    }
+}
+
+.footer-left a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
 }
 
 .footer-right {
@@ -477,7 +493,7 @@ a[id='WeChat'].circle-button:hover::after {
         width: 50%;
     }
 
-    .Info_box{
+    .Info_box {
         padding: 40px;
     }
 

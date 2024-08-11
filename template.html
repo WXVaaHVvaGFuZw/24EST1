@@ -4,56 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBUT 24电科1班</title>
+    <title>te11mplate.html</title>
     <link rel="icon" href="Image/LOGO.png">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-    <div class="header">
-        <div class="logo">
-            <a href="#">
-                <img src="Image/24EST_LOGO.png" alt="Logo">
+<!-- Home page -->
+<div class="header">
+    <div class="logo">
+        <a href="#">
+            <img src="Image/24EST_LOGO.png" alt="Logo">
+        </a>
+    </div>
+</div>
+
+<div class="navbar">
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="class.html">班级信息</a></li>
+        <li><a href="#">学习资料</a></li>
+        <li><a href="#">校园网站</a></li>
+        <li><a href="#">校园服务</a></li>
+    </ul>
+</div>
+
+<div class="footer">
+    <div class="footer-left">
+        <img src="Image/HBUT_LOGO.png" style="width: 200px; margin-left: 5px; margin-top: 20px;">
+        <p>地址：湖北省武汉市洪山区南李路28号 邮编：430068</p>
+        <p>版权归属 &copy; 2024 湖北工业大学理学院24电科1班 All rights reserved.</p>
+        <p style="color: #fff; line-height: 1.5;">The repository used to create this website is available at
+            <a href="https://github.com/WXVaaHVvaGFuZw/24EST1" target="_blank">https://github.com/WXVaaHVvaGFuZw/24EST1</a>
+        </p>
+    </div>
+    <div class="footer-right">
+        <h3>联系开发者(助班)</h3>
+        <div class="button-container">
+            <a id="QQ" class="circle-button">
+                <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+            </a>
+            <a id="WeChat" class="circle-button">
+                <i class="fa fa-weixin" aria-hidden="true"></i>
+            </a>
+            <a title="点击发送邮件" onclick="window.location.href='mailto:YuZhuohang2004@outlook.com'" class="circle-button">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+            <a title="15623365668" class="circle-button" onclick="copyNumber()">
+                <i class="fa fa-phone" aria-hidden="true"></i>
             </a>
         </div>
     </div>
-
-    <div class="navbar">
-        <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="class.html">班级信息</a></li>
-            <li><a href="#">学习资料</a></li>
-            <li><a href="#">校园网站</a></li>
-            <li><a href="#">校园服务</a></li>
-        </ul>
-    </div>
-
-    <div class="footer">
-        <div class="footer-left">
-            <img src="Image/HBUT_LOGO.png" style="width: 200px; margin-left: 5px; margin-top: 20px;">
-            <p>地址：湖北省武汉市洪山区南李路28号 邮编：430068</p>
-            <p>版权归属 &copy; 2024 湖北工业大学理学院24电科1班 All rights reserved.</p>
-        </div>
-        <div class="footer-right">
-            <h3>联系开发者(助班)</h3>
-            <div class="button-container">
-                <a id="QQ" class="circle-button">
-                    <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
-                </a>
-                <a id="WeChat" class="circle-button">
-                    <i class="fa fa-weixin" aria-hidden="true"></i>
-                </a>
-                <a title="点击发送邮件" onclick="window.location.href='mailto:YuZhuohang2004@outlook.com'" class="circle-button">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                </a>
-                <a title="15623365668" class="circle-button" onclick="copyNumber()">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-    </div>
+</div>
 </body>
+
+<!-- Notification Page -->
+<div class="skip">
+    <a href="index.html">首页</a>
+    <span>&gt;</span>
+    <a href="index.html#Notification">通知公告</a>
+    <span>&gt;</span>
+    <a href="#">正文</a>
+</div>
+
 
 <script src="script.js"></script>
 <script src="loading_template.js"></script>
