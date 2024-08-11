@@ -17,6 +17,7 @@ body {
     max-width: 40%;
     margin: 10px;
     margin-left: 40px;
+    user-select: none;
 }
 
 /* 导航栏 */
@@ -195,6 +196,7 @@ body {
 .title td {
     width: 1000px;
     padding: 10px;
+    user-select: none;
 }
 
 .title a {
@@ -229,6 +231,7 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     border-bottom: 2px dashed #ccc;
+    user-select: none;
 }
 
 .left-column .content img {
@@ -286,6 +289,10 @@ body {
     padding: 15px;
     display: flex;
     flex-direction: column;
+}
+
+.footer h3, img{
+    user-select: none;
 }
 
 .footer-left {
@@ -480,6 +487,10 @@ a[id='WeChat'].circle-button:hover::after {
     margin: auto;
 }
 
+.classbox h3 {
+    user-select: none;
+}
+
 .class_information {
     width: 80%;
     background-color: #fff;
@@ -530,6 +541,7 @@ a[id='WeChat'].circle-button:hover::after {
     flex: 1;
     border-radius: 3px;
     transition: box-shadow 0.3s;
+    user-select: none;
 }
 
 .class_information input[type="text"]:focus {
@@ -545,6 +557,7 @@ a[id='WeChat'].circle-button:hover::after {
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s;
+    user-select: none;
 }
 
 .class_information button:hover {
@@ -589,5 +602,129 @@ a[id='WeChat'].circle-button:hover::after {
     .class_information input,
     .class_information button {
         font-size: 10px;
+    }
+}
+
+/* curriculum */
+.course-container {
+    max-width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course-container a {
+    margin-right: 10px;
+}
+
+.category-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 30px;
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 10px;
+    color: #007BFF;
+    user-select: none;
+}
+
+.course-category {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.category-icon {
+    margin-right: 20px;
+    color: #007BFF;
+    font-size: 28px;
+}
+
+.category-title-small {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    user-select: none;
+}
+
+.course-link {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.course-link:hover {
+    text-decoration: underline;
+    color: #9d00ff;
+}
+
+@media screen and (max-width: 768px) {
+    .course-container {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .category-title {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .course-category {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    .category-icon {
+        margin-right: 10px;
+        font-size: 24px;
+    }
+
+    .category-title-small {
+        font-size: 16px;
+    }
+
+    .course-link {
+        font-size: 14px;
+    }
+}
+
+/* map */
+.map {
+    width: 70%;
+    margin: 40px auto;
+    user-select: none;
+}
+
+.map img {
+    width: 100%;
+    margin: 10px auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.map iframe {
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
+    margin: 10px auto;
+    user-select: none;
+}
+
+@media (max-width: 900px) {
+    .map iframe {
+        height: 50vh;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 18px;
     }
 }
