@@ -1,3 +1,44 @@
+// class page 密码
+let attempts = 0;
+const maxAttempts = 3;
+const cooldownTime = 10; // 冷却时间 10 秒
+let isCooldown = false;
+let cooldownTimer;
+
+function checkPassword() {
+    if (isCooldown) {
+        alert(`由于您连续错误3次，请等待 ${Math.ceil(cooldownTimer)} 秒后再试。`);
+        return false;
+    }
+
+    const password = prompt('请输入密码:');
+    if (password === null) {
+        return false;
+    }
+
+    if (password === '5201314') {
+        return true; // 密码
+    } else {
+        attempts++;
+        if (attempts >= maxAttempts) {
+            isCooldown = true;
+            alert('错误次数过多，您已进入冷却状态。');
+            cooldownTimer = cooldownTime;
+            const cooldownInterval = setInterval(() => {
+                cooldownTimer--;
+                if (cooldownTimer <= 0) {
+                    isCooldown = false;
+                    attempts = 0;
+                    clearInterval(cooldownInterval);
+                }
+            }, 1000);
+        } else {
+            alert(`密码错误，您还有 ${maxAttempts - attempts} 次尝试机会。`);
+        }
+        return false;
+    }
+}
+
 // 轮播图功能
 document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".slide");
@@ -159,3 +200,4 @@ setInterval(() => {
     img.style.left = imgl + "px"
     img.style.top = imgt + "px"
 }, 10)
+
