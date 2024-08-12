@@ -1,8 +1,15 @@
 body {
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+}
+
+.img{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-image: url('Image/Mouse1.gif');
+    background-size: cover;
+    z-index: 100;
 }
 
 .header {
@@ -39,6 +46,7 @@ body {
     position: relative;
     width: 150px;
     text-align: center;
+    z-index: 200;
 }
 
 .navbar ul li a {
@@ -124,6 +132,10 @@ body {
     height: 500px;
     overflow: hidden;
     position: relative;
+}
+
+.slider button {
+    z-index: 200;
 }
 
 .slide {
