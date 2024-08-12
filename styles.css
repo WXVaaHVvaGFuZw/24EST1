@@ -499,6 +499,17 @@ a[id='WeChat'].circle-button:hover::after {
     margin: auto;
 }
 
+@media (max-width: 767px) {
+    iframe {
+        display: none;
+    }
+    
+   .Info_text::after {
+        content: "此页面暂不支持手机查看，请使用电脑浏览网页";
+        color: red;
+    }
+}
+
 /* class */
 .classbox {
     background-color: #ddd;
