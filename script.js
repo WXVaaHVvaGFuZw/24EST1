@@ -84,3 +84,45 @@ function searchStudent() {
         }
     }
 }
+
+// Pop-up alerts when the device screen size is less than 900px
+function checkScreenSize() {
+    if (window.innerWidth < 900) {
+        document.querySelector('.popup').style.display = 'block';
+        startCountdown();
+    }
+}
+
+function startCountdown() {
+    let countdown = 3;
+    const countdownElement = document.getElementById('countdown');
+    const countdownInterval = setInterval(() => {
+        countdownElement.textContent = countdown;
+        if (countdown === 0) {
+            clearInterval(countdownInterval);
+            document.querySelector('.popup').style.display = 'none';
+        }
+        countdown--;
+    }, 1000);
+}
+
+// Back to Top
+const button = document.getElementById('scrollTopButton');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        button.style.bottom = '20px';
+        button.style.opacity = '1';
+    } else {
+        button.style.bottom = '-60px';
+        button.style.opacity = '0';
+    }
+});
+
+button.addEventListener('click', () => {
+    button.style.animation = 'rocket-launch 0.5s forwards';
+    setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        button.style.animation = '';
+    }, 500);
+});

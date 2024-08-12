@@ -320,6 +320,7 @@ body {
 .footer-right {
     width: 100%;
     text-align: center;
+    margin-top: 0px;
 }
 
 .footer-right h3 {
@@ -336,33 +337,6 @@ body {
     margin-right: 10px;
 }
 
-@media (min-width: 900px) {
-    .footer {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .footer-left {
-        width: 50%;
-        margin-left: 30px;
-    }
-
-    .footer-right {
-        width: 40%;
-        text-align: left;
-    }
-
-    .footer-right h3 {
-        text-align: left;
-    }
-
-    .footer-right a {
-        margin-top: 25px;
-        margin-right: 25px;
-    }
-}
-
-
 .button-container {
     display: flex;
 }
@@ -370,8 +344,9 @@ body {
 .circle-button {
     width: 40px;
     height: 40px;
-    left: 120px;
+    left: 10px;
     right: 20px;
+    margin-left: 10px;
     border-radius: 50%;
     background-color: #003c6d;
     position: relative;
@@ -421,6 +396,38 @@ a[id='WeChat'].circle-button:hover::after {
 .fa-weixin {
     color: white;
     font-size: 30px;
+}
+
+@media (min-width: 900px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-left {
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .footer-right {
+        width: 40%;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .footer-right h3 {
+        text-align: left;
+    }
+
+    .footer-right a {
+        margin-top: 25px;
+        margin-right: 25px;
+    }
+
+    .circle-button {
+        left: 170px;
+        margin-left: 10px;
+    }
 }
 
 /* Notification */
@@ -726,5 +733,126 @@ a[id='WeChat'].circle-button:hover::after {
 
     h1 {
         font-size: 18px;
+    }
+}
+
+/* pop-uo window */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 9999;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-body {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #34495e;
+}
+
+.popup-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup-close {
+    padding: 12px 25px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.popup-close:hover {
+    background-color: #566573;
+}
+
+#countdown {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    background-color: #e7ecef;
+    border-radius: 5px;
+}
+
+#computer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+/* Back to Top */
+#scrollTopButton {
+    position: fixed;
+    bottom: -60px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: bottom 0.3s ease, opacity 0.3s ease;
+}
+
+#scrollTopButton img {
+    width: 60px;
+    height: 60px;
+}
+
+#scrollTopButton:hover {
+    animation: rocket-hover 1s infinite;
+}
+
+@keyframes rocket-hover {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#scrollTopButton:active img {
+    animation: rocket-launch 0.5s forwards;
+}
+
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100vh);
     }
 }
