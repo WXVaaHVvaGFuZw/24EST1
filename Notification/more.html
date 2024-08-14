@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function () {
+            var titleContent = document.querySelector('.Info_title h1').textContent;
+            document.title = titleContent;
+        };
+    </script>
+    <link rel="icon" href="../Image/LOGO.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            height: 800px;
+            overflow: hidden;
+        }
+
+        .skip {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #eee;
+        }
+
+        .skip a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .skip a:hover {
+            color: #025394;
+        }
+
+        .notifications-container {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .notifications-container a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #000;
+        }
+
+        .notification {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 5px;
+            transition: background 0.3s, transform 0.2s;
+            max-height: 30px;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .notification:hover {
+            background: #d9dcea;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 5px 10px;
+            margin: 0 3px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button:hover {
+            background-color: #0056b3;
+        }
+
+        .pagination button:disabled {
+            background-color: #b0bec5;
+            cursor: not-allowed;
+        }
+
+        .page-number {
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+                max-height: 630px;
+            }
+
+            .skip a {
+                font-size: 16px;
+            }
+
+            .notification {
+                max-height: 20px;
+            }
+
+            .notifications-container a {
+                font-size: 12px;
+            }
+
+            .pagination button {
+                padding: 3px 8px;
+                font-size: 12px;
+            }
+
+            .page-number {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+
+    <div class="container">
+        <div class="skip">
+            <a href="../index.html">首页</a>
+            <span>&gt;</span>
+            <a href="../index.html#Notification">通知公告</a>
+            <span>&gt;</span>
+            <a href="#">更多</a>
+        </div>
+
+        <div class="notifications-container" id="notifications">
+            <!-- Notification Info -->
+
+            <!-- <a href="X.html">
+                <div class="notification">### Notification ###
+                    <p>XX-XX</p>
+                </div>
+            </a> -->
+
+            <a href="5.html">
+                <div class="notification">关于24电科1班新生加入理学院24级事务通知群的通知
+                    <p>08-14</p>
+                </div>
+            </a>
+
+            <a href="4.html">
+                <div class="notification">关于24电科1班大一课表的通知
+                    <p>08-12</p>
+                </div>
+            </a>
+
+            <a href="3.html">
+                <div class="notification">关于湖北工业大学2024级本科新生安全教育学习通知及操作说明的通知
+                    <p>08-12</p>
+                </div>
+            </a>
+
+            <a href="2.html">
+                <div class="notification">关于新生团组织关系转接流程的通知
+                    <p>08-10</p>
+                </div>
+            </a>
+
+            <a href="1.html">
+                <div class="notification">关于24电科1班新生加入班级群的通知
+                    <p>08-09</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Button -->
+        <div class="pagination">
+            <button id="prev" onclick="changePage(-1)">上一页</button>
+            <span class="page-number" id="pageNumber">1</span>
+            <button id="next" onclick="changePage(1)">下一页</button>
+        </div>
+    </div>
+
+    <script>
+        const notificationsPerPage = 10;
+        let currentPage = 1;
+
+        function renderPage(page) {
+            const notificationsContainer = document.getElementById('notifications');
+            const allNotifications = Array.from(notificationsContainer.children);
+            const start = (page - 1) * notificationsPerPage;
+            const end = page * notificationsPerPage;
+
+            allNotifications.forEach((notification, index) => {
+                notification.style.display = (index >= start && index < end) ? 'block' : 'none';
+            });
+
+            document.getElementById('pageNumber').innerText = page;
+
+            document.getElementById('prev').disabled = page === 1;
+            document.getElementById('next').disabled = end >= allNotifications.length;
+        }
+
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage > 0 && newPage <= Math.ceil(document.getElementById('notifications').children.length / notificationsPerPage)) {
+                currentPage = newPage;
+                renderPage(currentPage);
+            }
+        }
+
+        renderPage(currentPage);
+    </script>
+
+    <footer></footer>
+</body>
+
+<script src="../loading_template.js"></script>
+<script src="../script.js"></script>
+
+</html>
